@@ -52,7 +52,7 @@ export const sendContactMessage = createServerFn({ method: "POST" })
           name: data.name,
           email: data.email,
           message: data.message,
-          _subject: `Kernelium – ${data.name}`,
+          _subject: `Luwa – ${data.name}`,
           _replyto: data.email,
           _template: "box",
           _captcha: "false",

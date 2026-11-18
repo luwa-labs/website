@@ -4,15 +4,28 @@ export type Locale = "en" | "fr"
 
 const dictionary = {
   en: {
-    nav: { reachOut: "Reach out", language: "Language" },
+    nav: {
+      reachOut: "Contact",
+      demo: "Private demo",
+      demoLabel: "Open the Luwa private beta demo",
+      language: "Language",
+      label: "Main navigation",
+      skip: "Skip to content",
+    },
     hero: {
-      title: "Kernelium",
-      description: "For your medical context",
-      cta: "Reach out",
+      eyebrow: "AI FOR CLINICAL PRACTICE",
+      title: "The right context. Better clinical decisions.",
+      description:
+        "Luwa brings patient information together to help pharmacists analyze clinical situations, make informed decisions, and document their reasoning.",
+      cta: "Explore the demo",
+      contact: "Get in touch",
+      caption: "Private demo · Fictional patient data",
+      logo: "Luwa animated geometric logo",
     },
     contact: {
-      title: "Reach out",
-      description: "Tell us about your context and we'll get back to you.",
+      title: "Interested in exploring Luwa?",
+      description:
+        "We're collaborating with healthcare professionals to shape the next generation of clinical tools. Get in touch to learn more.",
       name: "Name",
       email: "Email",
       message: "Message",
@@ -23,22 +36,48 @@ const dictionary = {
       successDescription: "Thanks. We'll get back to you soon.",
       errorTitle: "Message not sent",
       errorDescription: "Something went wrong. Please try again.",
-      activationDescription:
-        "Confirm the activation email, then try again.",
+      activationDescription: "Confirm the activation email, then try again.",
     },
-    footer: { rights: "All rights reserved." },
+    capabilities: {
+      label: "Core capabilities",
+      context: {
+        title: "Patient context",
+        description: "Relevant information, in one clinical picture.",
+      },
+      analysis: {
+        title: "Clinical analysis",
+        description: "Contextualize laboratory results and prescriptions.",
+      },
+      documentation: {
+        title: "Documentation",
+        description: "Turn clinical reasoning into structured notes.",
+      },
+    },
+    footer: { built: "Built in Québec" },
   },
   fr: {
-    nav: { reachOut: "Nous joindre", language: "Langue" },
+    nav: {
+      reachOut: "Contact",
+      demo: "Démo privée",
+      demoLabel: "Ouvrir la démo privée de Luwa en bêta",
+      language: "Langue",
+      label: "Navigation principale",
+      skip: "Aller au contenu",
+    },
     hero: {
-      title: "Kernelium",
-      description: "Pour votre contexte médical",
-      cta: "Nous joindre",
+      eyebrow: "L'IA AU SERVICE DE LA PRATIQUE CLINIQUE",
+      title: "Le bon contexte. De meilleures décisions cliniques.",
+      description:
+        "Luwa rassemble les informations pertinentes du patient pour aider les pharmaciens à analyser les situations cliniques, à prendre des décisions éclairées et à documenter leur raisonnement.",
+      cta: "Explorer la démo",
+      contact: "Nous joindre",
+      caption: "Démo privée · Données patients fictives",
+      logo: "Logo géométrique animé de Luwa",
     },
     contact: {
-      title: "Nous joindre",
+      title: "Envie d'en découvrir davantage sur Luwa ?",
       description:
-        "Parlez-nous de votre contexte et nous vous répondrons rapidement.",
+        "Nous collaborons avec des professionnels de la santé pour développer des outils cliniques adaptés à leurs besoins. Contactez-nous pour en savoir plus.",
       name: "Nom",
       email: "Courriel",
       message: "Message",
@@ -52,7 +91,25 @@ const dictionary = {
       activationDescription:
         "Confirmez le courriel d'activation, puis réessayez.",
     },
-    footer: { rights: "Tous droits réservés." },
+    capabilities: {
+      label: "Fonctionnalités principales",
+      context: {
+        title: "Contexte patient",
+        description:
+          "Les informations pertinentes réunies dans un même portrait clinique.",
+      },
+      analysis: {
+        title: "Analyse clinique",
+        description:
+          "Contextualiser les résultats de laboratoire et les ordonnances.",
+      },
+      documentation: {
+        title: "Documentation",
+        description:
+          "Transformer le raisonnement clinique en notes structurées.",
+      },
+    },
+    footer: { built: "Conçu au Québec" },
   },
 } as const
 

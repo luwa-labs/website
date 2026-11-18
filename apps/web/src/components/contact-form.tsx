@@ -22,10 +22,16 @@ import { sendContactMessage } from "@/lib/send-contact"
 
 export function scrollToContact(event: React.MouseEvent) {
   event.preventDefault()
-  document.getElementById("contact")?.scrollIntoView({
-    behavior: "smooth",
+  const contact = document.getElementById("contact")
+  contact?.scrollIntoView({
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "instant"
+      : "smooth",
     block: "start",
   })
+  contact
+    ?.querySelector<HTMLInputElement>("#name")
+    ?.focus({ preventScroll: true })
 }
 
 export function ContactForm() {
@@ -109,7 +115,7 @@ export function ContactForm() {
               </Field>
 
               {status === "sent" && (
-                <Alert>
+                <Alert role="status">
                   <CircleCheck />
                   <AlertTitle>{t.contact.successTitle}</AlertTitle>
                   <AlertDescription>
@@ -133,7 +139,7 @@ export function ContactForm() {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full"
+                className="h-11 w-full"
                 disabled={status === "sending"}
               >
                 {status === "sent" ? (
@@ -144,7 +150,9 @@ export function ContactForm() {
                 ) : (
                   <>
                     <Send data-icon="inline-start" />
-                    {status === "sending" ? t.contact.sending : t.contact.submit}
+                    {status === "sending"
+                      ? t.contact.sending
+                      : t.contact.submit}
                   </>
                 )}
               </Button>

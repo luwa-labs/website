@@ -15,11 +15,12 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Kernelium — For your medical context",
+        title: "Luwa — The right context. Better clinical decisions.",
       },
       {
         name: "description",
-        content: "Kernelium — for your medical context.",
+        content:
+          "Luwa is building a clinical assistant that helps pharmacists understand patient records, analyze clinical information, and document their reasoning.",
       },
     ],
     links: [

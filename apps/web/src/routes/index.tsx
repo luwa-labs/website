@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { Separator } from "@workspace/ui/components/separator"
+import { Capabilities } from "@/components/capabilities"
 
 import { ContactForm } from "@/components/contact-form"
 import { Footer } from "@/components/footer"
@@ -12,11 +12,9 @@ function App() {
   return (
     <div className="flex min-h-svh flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1">
         <Hero />
-        <div className="mx-auto max-w-5xl px-4">
-          <Separator />
-        </div>
+        <Capabilities />
         <ContactForm />
       </main>
       <Footer />

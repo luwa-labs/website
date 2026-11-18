@@ -1,63 +1,55 @@
 import { Button } from "@workspace/ui/components/button"
-import { Separator } from "@workspace/ui/components/separator"
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "@workspace/ui/components/toggle-group"
+import { ArrowUpRight } from "lucide-react"
 
-import logo from "@assets/logo_medium.svg?url"
 import { scrollToContact } from "@/components/contact-form"
-import { useI18n, type Locale } from "@/lib/i18n"
+import { DEMO_URL } from "@/lib/demo"
+import { useI18n } from "@/lib/i18n"
 
 export function Navbar() {
   const { locale, setLocale, t } = useI18n()
-
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
-      <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
-        <a href="#top" className="flex items-center gap-2 font-semibold">
-          {/* The SVG has a white stroke, so it's used as a mask to follow the theme's text color. */}
-          <span
-            aria-hidden
-            className="size-7 bg-foreground"
-            style={{
-              mask: `url("${logo}") center / contain no-repeat`,
-              WebkitMask: `url("${logo}") center / contain no-repeat`,
-            }}
-          />
-          Kernelium
+    <header>
+      <a href="#main" className="skip-link">
+        {t.nav.skip}
+      </a>
+      <nav
+        aria-label={t.nav.label}
+        className="mx-auto flex min-h-20 max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4 sm:px-10"
+      >
+        <a
+          href="#top"
+          className="mr-auto rounded-sm text-xl font-medium tracking-tight"
+        >
+          Luwa
         </a>
-
-        <div className="flex items-center gap-3">
-          <ToggleGroup
-            variant="outline"
-            size="sm"
-            spacing={0}
-            aria-label={t.nav.language}
-            value={[locale]}
-            onValueChange={(value) => {
-              // Keep one language always selected.
-              const next = value[0] as Locale | undefined
-              if (next) setLocale(next)
-            }}
+        <div className="ml-auto flex items-center gap-3 sm:gap-6">
+          <button
+            type="button"
+            onClick={() => setLocale(locale === "en" ? "fr" : "en")}
+            aria-label={
+              locale === "en" ? "Passer en français" : "Switch to English"
+            }
+            className="min-h-11 min-w-11 rounded-sm text-xs text-muted-foreground transition-colors hover:text-foreground"
           >
-            <ToggleGroupItem value="en" aria-label="English">
-              EN
-            </ToggleGroupItem>
-            <ToggleGroupItem value="fr" aria-label="Français">
-              FR
-            </ToggleGroupItem>
-          </ToggleGroup>
-
-          {/* A fixed height with the separator's stretch alignment pins the line to the top. */}
-          <Separator orientation="vertical" className="my-auto h-5" />
-
-          <Button
-            nativeButton={false}
-            render={<a href="#contact" />}
+            <span lang={locale === "en" ? "fr" : "en"}>
+              {locale === "en" ? "FR" : "EN"}
+            </span>
+          </button>
+          <a
+            href="#contact"
             onClick={scrollToContact}
+            className="inline-flex min-h-11 items-center rounded-sm text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             {t.nav.reachOut}
+          </a>
+          <Button
+            variant="outline"
+            nativeButton={false}
+            render={<a href={DEMO_URL} aria-label={t.nav.demoLabel} />}
+            className="h-11 gap-2 rounded-lg px-4 shadow-none"
+          >
+            {t.nav.demo}
+            <ArrowUpRight aria-hidden="true" className="size-3.5" />
           </Button>
         </div>
       </nav>

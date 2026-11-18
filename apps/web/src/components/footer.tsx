@@ -9,7 +9,7 @@ export function Footer() {
     <footer>
       <Separator />
       <p className="px-4 py-6 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} Kernelium. {t.footer.rights}
+        © 2026 Luwa · {t.footer.built}
       </p>
     </footer>
   )

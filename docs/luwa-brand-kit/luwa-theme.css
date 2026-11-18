@@ -1,0 +1,16 @@
+@font-face{font-family:"Geist Variable";src:url("./fonts/geist-latin.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{--luwa-background:oklch(1 0 0);--luwa-foreground:oklch(.145 0 0);--luwa-primary:oklch(.205 0 0);--luwa-primary-foreground:oklch(.985 0 0);--luwa-muted:oklch(.97 0 0);--luwa-muted-foreground:oklch(.50 0 0);--luwa-border:oklch(.922 0 0);--luwa-ring:oklch(.25 0 0);--luwa-radius-control:8px;--luwa-radius-surface:14px;--luwa-font:"Geist Variable",ui-sans-serif,system-ui,sans-serif}
+.luwa-brand{margin:0;background:var(--luwa-background);color:var(--luwa-foreground);font-family:var(--luwa-font);line-height:1.6;font-feature-settings:"cv11","ss01"}
+.luwa-brand *{box-sizing:border-box}
+.luwa-brand :focus-visible{outline:2px solid var(--luwa-ring);outline-offset:3px}
+.luwa-brand .luwa-container{width:min(100% - 40px,72rem);margin-inline:auto}
+.luwa-brand .luwa-section{padding-block:clamp(48px,7vw,80px)}
+.luwa-brand .luwa-display{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-.035em;font-weight:600;text-wrap:balance}
+.luwa-brand .luwa-muted{color:var(--luwa-muted-foreground)}
+.luwa-brand .luwa-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;max-width:100%;padding:10px 16px;border:1px solid var(--luwa-primary);border-radius:var(--luwa-radius-control);background:var(--luwa-primary);color:var(--luwa-primary-foreground);font:500 .875rem/1.4 var(--luwa-font);text-decoration:none;cursor:pointer}
+.luwa-brand .luwa-button:hover{background:var(--luwa-foreground)}
+.luwa-brand .luwa-button--outline{border-color:var(--luwa-border);background:var(--luwa-background);color:var(--luwa-foreground)}
+.luwa-brand .luwa-button--outline:hover{background:var(--luwa-muted)}
+.luwa-brand .luwa-card{padding:24px;border:1px solid var(--luwa-border);border-radius:var(--luwa-radius-surface)}
+.luwa-brand .luwa-pill{display:inline-flex;padding:4px 10px;border:1px solid var(--luwa-border);border-radius:999px;color:var(--luwa-muted-foreground);font-size:.75rem}
+@media(prefers-reduced-motion:reduce){.luwa-brand *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
